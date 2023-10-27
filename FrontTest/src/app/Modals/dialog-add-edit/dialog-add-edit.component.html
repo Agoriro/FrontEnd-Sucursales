@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>{{title}} Sucursal</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formBranch">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Código</mat-label>
+                    <input matInput formControlName="branchCode" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput formControlName="branchDescription" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Dirección</mat-label>
+                    <input matInput formControlName="branchAddress" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Identificación</mat-label>
+                    <input matInput formControlName="branchId" autocomplete="off">
+                  </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Creación</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="branchDateCreation" autocomplete="off">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-form-field appearance="fill">
+                    <mat-label>Moneda</mat-label>
+                    <mat-select formControlName="idCurrency">
+                        <mat-option *ngFor="let item of listaResult; let i = index" [value]="item.idCurrency">
+                            {{item.currencyName}}
+                        </mat-option>
+                    </mat-select>
+                 </mat-form-field>
+            </mat-grid-tile>
+
+          </mat-grid-list>
+
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+  <button mat-raised-button color="primary" (click)="addEditBranch()" [disabled]="formBranch.invalid">{{actionButton}}</button>
+</div>

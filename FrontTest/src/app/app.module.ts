@@ -26,10 +26,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import{MatGridListModule} from '@angular/material/grid-list';
+import { DialogAddEditComponent } from './Modals/dialog-add-edit/dialog-add-edit.component';
+import { DialogDeleteComponent } from './Modals/dialog-delete/dialog-delete.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogAddEditComponent,
+    DialogDeleteComponent
   ],
   imports: [
     BrowserModule,

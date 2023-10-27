@@ -1,10 +1,11 @@
 export interface Branch {
-    IdBranch:number,
-    BranchCode:number,
-    BranchDescription:string,
-    BranchAddress:string,
-    BranchId:string,
-    BranchDateCreation:string,
-    CurrencyName:string
+    idBranch:number,
+    branchCode:number,
+    branchDescription:string,
+    branchAddress:string,
+    branchId:string,
+    branchDateCreation:string,
+    idCurrency:string,
+    currencyName:string
 
 }
